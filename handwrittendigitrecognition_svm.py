@@ -33,28 +33,28 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_
 
 #Trainng the SVM
 from sklearn.svm import SVC
-model_svm = SVC(kernel='linear')
+model_svm = SVC( )
 model_svm.fit(X_train, Y_train)
+print(model_svm.kernel)
+# #Predict the testing data
+# Y_pred = model_svm.predict(X_test)
+# # print(Y_pred)
+# # print(np.concatenate(( Y_pred.reshape(len(Y_pred),1), Y_test.reshape(len(Y_test),1)), 1))
 
-#Predict the testing data
-Y_pred = model_svm.predict(X_test)
-# print(Y_pred)
-# print(np.concatenate(( Y_pred.reshape(len(Y_pred),1), Y_test.reshape(len(Y_test),1)), 1))
-
-#Evaluation - Accuracy
-from sklearn.metrics import accuracy_score
-print("Accuracy of the model:{0}%".format(accuracy_score(Y_test, Y_pred)*100))
+# #Evaluation - Accuracy
+# from sklearn.metrics import accuracy_score
+# print("Accuracy of the model:{0}%".format(accuracy_score(Y_test, Y_pred)*100))
 
 
-#Prediction
-n=15
-result = model_svm.predict(dataset.images[n].reshape((1,-1)))
-plt.imshow(dataset.images[n], cmap=plt.cm.gray_r, interpolation='nearest')     
-print(result)
-print("\n")
-plt.axis('off')
-plt.title('%i' %result)
-plt.show()
+# #Prediction
+# n=15
+# result = model_svm.predict(dataset.images[n].reshape((1,-1)))
+# plt.imshow(dataset.images[n], cmap=plt.cm.gray_r, interpolation='nearest')     
+# print(result)
+# print("\n")
+# plt.axis('off')
+# plt.title('%i' %result)
+# plt.show()
 
 
 
